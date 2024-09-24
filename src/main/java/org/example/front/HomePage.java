@@ -12,23 +12,24 @@ public class HomePage extends BasePage {
         this.driver = driver;
     }
 
-    public HomePage setLastName(String lastname) {
-        findById("lastname").sendKeys(lastname);
+
+    public HomePage setEmail(String email) {
+        findById("recipient-email").sendKeys(email);
         return this;
     }
 
-    public HomePage setPhone(String phone) {
-        findByXpath("//*[@id='phone']").sendKeys(phone);
+    public HomePage setName (String name){
+        findById("recipient-name").sendKeys(name);
         return this;
     }
 
-    public HomePage clickSubmitButton() {
-        findById("submitContact").click();
+    public HomePage setMessage (String message){
+        findById("message-text").sendKeys(message);
         return this;
     }
 
     public HomePage clickContactButton() {
-        findByXpath("//a[@class='nav-link']").click();
+        findByXpath("//button[@onclick='send()']").click();
         return this;
     }
 }
