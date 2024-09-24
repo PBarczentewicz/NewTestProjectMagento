@@ -27,5 +27,8 @@ public class HomePage extends BasePage {
         return this;
     }
 
-
+    public HomePage clickContactButton() {
+        findByXpath("//a[@class='nav-link']").click();
+        return this;
+    }
 }
