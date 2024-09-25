@@ -20,20 +20,11 @@ public class ContactFormTest extends BaseTest {
                 .setName("TOmas")
                 .setMessage("lksajdsakljdskadjskdksajdsaldjsalkdsadkas")
                 .clickContactButton();
+
         Alert alert = driver.switchTo().alert();
         String succesAlert = alert.getText();
         String succesText = "Thanks for the message!!";
 
         Assertions.assertEquals(succesAlert, succesText);
-
-
-
-
-
-
-
-       // WebElement contactForm = homePage.findByXpath("//a[@class='nav-link']");
-       // contactForm.click();
-
     }
 }

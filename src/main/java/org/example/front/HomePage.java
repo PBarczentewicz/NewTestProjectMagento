@@ -32,4 +32,11 @@ public class HomePage extends BasePage {
         findByXpath("//button[@onclick='send()']").click();
         return this;
     }
+
+    public HomePage clickAddToCard() {
+        findByXpath("//*[@class='btn btn-success btn-lg']").click();
+        return this;
+    }
+
+
 }
