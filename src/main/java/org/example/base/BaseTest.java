@@ -15,7 +15,7 @@ import java.time.Duration;
 
 public class BaseTest {
 
-    WebDriver driver;
+    public WebDriver driver;
     DriverManager driverManager;
     protected CommonPage commonPage;
     protected HomePage homePage;
@@ -27,7 +27,7 @@ public class BaseTest {
         driver = driverManager.getDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.get("https://magento.softwaretestingboard.com/");
+        driver.get("https://www.demoblaze.com/index.html");
         navigateToCommonPage();
     }
 
@@ -38,7 +38,7 @@ public class BaseTest {
     }
 
     protected CommonPage navigateToCommonPage() {
-        commonPage = PageFactory.initElements(driver, CommonPage.class);
+        commonPage = new CommonPage(driver);
         return commonPage;
     }
 
