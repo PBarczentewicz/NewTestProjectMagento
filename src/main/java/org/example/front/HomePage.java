@@ -1,31 +1,22 @@
 package org.example.front;
 
 import org.example.base.BasePage;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class HomePage extends BasePage {
 
     private final WebDriver driver;
 
-    public HomePage(WebDriver driver) {
-        super(driver);
-        this.driver = driver;
+    public HomePage(WebDriver oDriver) {
+        super(oDriver);
+        this.driver = oDriver;
     }
-
-    public HomePage setLastName(String lastname) {
-        findById("lastname").sendKeys(lastname);
-        return this;
-    }
-
-    public HomePage setPhone(String phone) {
-        findByXpath("//*[@id='phone']").sendKeys(phone);
-        return this;
-    }
-
-    public HomePage clickSubmitButton() {
-        findById("submitContact").click();
-        return this;
-    }
-
-
 }
